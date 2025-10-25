@@ -1,16 +1,15 @@
 {
     "configurations": [
         {
-            "name": "C/C++: g++ 构建和调试活动文件",
-            "type": "cppdbg",
+            "name": "CodeLLDB: 调试 qi",
+            "type": "lldb",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/qi",
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
+            "externalConsole": true,
             "preLaunchTask": "C/C++: g++ 生成活动文件"
         }
     ],

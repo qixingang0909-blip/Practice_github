@@ -1,0 +1,3 @@
+/Users/qismart/C++代码/代码/build/CMakeFiles/qi.dir
+/Users/qismart/C++代码/代码/build/CMakeFiles/edit_cache.dir
+/Users/qismart/C++代码/代码/build/CMakeFiles/rebuild_cache.dir

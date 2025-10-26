@@ -1,54 +1,18 @@
 #include <iostream>
-#include "qi.h"
+#include <string>
+#include <cctype>   // toupper
 
-int main()
-{
-    double lhs{0.0}, rhs{0.0};
-    char op{'+'};
+int main() {
+    std::string s;
+    std::cout << "输入一行文字：";
+    std::getline(std::cin, s);
 
-    bool retFlag;
-    int retVal = input(lhs, op, rhs, retFlag);
-    if (retFlag)
-        return retVal;
-
-    double result{0.0};
-    switch (op)
-    {
-        case '+':
-            result = lhs + rhs;
-            break;
-        case '-':
-            result = lhs - rhs;
-            break;
-        case '*':
-            result = lhs * rhs;
-            break;
-        case '/':
-            if (rhs == 0.0)
-            {
-                std::cerr << "错误：除数不能为 0。\n";
-                return 1;
-            }
-            result = lhs / rhs;
-            break;
-        default:
-            std::cerr << "不支持的运算符：" << op << "，请使用 + - * /。\n";
-            return 1;
+    // 把每个字符转成大写
+    for (char &ch : s) {
+        // 为了兼容中文/符号，这里把 char 转成 unsigned char 再给 toupper
+        ch = std::toupper(static_cast<unsigned char>(ch));
     }
 
-    std::cout << "结果：" << result << '\n';
+    std::cout << "结果：" << s << "\n";
     return 0;
-}
-
-int input(double &lhs, char &op, double &rhs, bool &retFlag)
-{
-    retFlag = true;
-    std::cout << "请输入表达式 (例如 12.5 * 3): ";
-    if (!(std::cin >> lhs >> op >> rhs))
-    {
-        std::cerr << "输入格式有误，形如：数 运算符 数\n";
-        return 1;
-    }
-    retFlag = false;
-    return {};
 }

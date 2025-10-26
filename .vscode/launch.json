@@ -9,8 +9,9 @@
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
-            "preLaunchTask": "C/C++: g++ 生成活动文件"
+            "externalConsole": false,
+            "terminal": "integrated",
+            "preLaunchTask": "C/C++: g++ 快速编译"
         }
     ],
     "version": "2.0.0"
